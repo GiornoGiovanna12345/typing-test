@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Typing Test</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+    </head>
+    <body>
+        <h1>Typing Test</h1>
+        <div id="time-selector">
+            <button class="time-btn active" data-time="30">30s</button>
+            <button class="time-btn" data-time="60">1 min</button>
+            <button class="time-btn" data-time="120">2 min</button>
+            <button class="time-btn" data-time="300">5 min</button>
+        </div>
+        <div id="countdown"></div>
+        <div id="text-display"></div>
+        <div style="position: fixed; top: 20px; right: 20px; display: flex; align-items: center; gap: 8px; width: fit-content; z-index: 100;">
+            <label class="toggle-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+            <span id="theme-label">Light Mode</span>
+        </div>
+        <div style="position: fixed; top: 20px; left: 20px; display: flex; align-items: center; gap: 8px; width: fit-content; z-index: 100;">
+            <label class="toggle-switch">
+                <input type="checkbox" id="blind-toggle">
+                <span class="slider"></span>
+            </label>
+            <span id="blind-label">Blind Mode</span>
+        </div>
+        <textarea id="input-box" placeholder="Start typing here..."></textarea>
+        <button id="retry-btn" style="display:none">Try Again</button>
+        <div id="high-score"></div>
+        <div id="results"></div>
+        <script src="app.js"></script>
+    </body>
+</html>
