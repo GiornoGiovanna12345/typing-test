@@ -3,7 +3,7 @@
 Check out your typing speed by typing out the sentences in the given amount of time!
 
 ## Live Demo 
-Check it out here: typing_test[https://giornogiovanna12345.github.io/typing-test/]
+Check it out here: typing_test(https://giornogiovanna12345.github.io/typing-test/)
 
 ## Features
 - Timed tests (30s, 1min, 2min and 5min)
