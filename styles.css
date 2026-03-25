@@ -18,7 +18,7 @@ body{
 }
 
 body.light{
-    background: #f5f5f5;
+    background: #fdf0d5;
     color: #003049;
 }
 
@@ -30,6 +30,23 @@ body.light #input-box{
 
 body.light #input-box:focus{
     border-color: #669bbc;
+}
+
+body.light button {
+    background: #e8f4f8;
+    border: 2px solid #2a8faa;
+    color: #2a8faa;
+}
+
+body.light button:hover {
+    background: #2a8faa;
+    color: white;
+}
+
+body.light .time-btn.active {
+    background: transparent;
+    border: 2px solid #1a5f7a;
+    color: #1a5f7a;
 }
 
 h1{
@@ -46,9 +63,9 @@ h1{
     font-size: 1.2rem;
     font-family: monospace; 
     padding: 0.75rem;
-    background: #004f7a;
+    background: #1a5f7a;
     color:#eee;
-    border: 2px solid #0f2835;
+    border: 2px solid #13404d;
     text-align: center;
     border-radius: 8px;
     resize:none;
@@ -63,7 +80,8 @@ button {
     margin-top: 1rem;
     padding: 0.6rem 2rem;
     font-size: 1rem;
-    background: #c1121f;
+    background: #1a5f7a;
+    border: 2px solid #2a8faa;
     color: #fdf0d5;
     border: none;
     border-radius: 8px;
@@ -71,7 +89,7 @@ button {
 }
 
 button:hover {
-    background: #780000;
+    background: #2a8faa;
 }
 
 #results {
@@ -153,7 +171,7 @@ input:checked + .slider:before {
 }
 
 .time-btn.active {
-    background: #c1121f;
+    background: transparent;
     border: 2px solid #fdf0d5;
     color: #fdf0d5;
     font-weight: bold;
@@ -172,7 +190,11 @@ input:checked + .slider:before {
     font-size: 1rem;
     color: #bebebe;
 }
-
+body.light #high-score{
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    color: #515050;
+}
 #text-display {
     font-size: 1.4rem;
     width: 700px;
