@@ -1,9 +1,9 @@
 # TYPING TEST 
 
-A browser-based typing speed test built with vanilla HTML, CSS and Javascript
+🌐 A browser-based typing speed test built with vanilla HTML, CSS and Javascript
 
 ## Live Demo 
-Check it out here: [typing test](https://giornogiovanna12345.github.io/typing-test/)
+Check it out here: [typing test ⌨️](https://giornogiovanna12345.github.io/typing-test/)
 
 ## Screenshot
 ![Typing Test Screenshot](screenshot.png)
