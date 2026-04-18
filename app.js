@@ -112,6 +112,14 @@ function resetTest() {
 function endTest() {
     testActive = false;
     inputBox.disabled = true;
+
+    // count partial sentence progress
+    const partialText = inputBox.value;
+    for (let i = 0; i < partialText.length; i++) {
+        totalCharsTyped++;
+        if (partialText[i] === textToType[i]) totalCorrectChars++;
+    }
+
     const minutes = selectedTime / 60;
     const rawWPM = Math.round((totalCharsTyped / 5) / minutes);
     const accuracy = totalCharsTyped > 0 ? Math.round((totalCorrectChars / totalCharsTyped) * 100) : 0;
