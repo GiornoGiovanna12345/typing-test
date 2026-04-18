@@ -208,8 +208,9 @@ function loadHighScore(){
 }
 loadHighScore();
 
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
 function playTypeSound() {
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     const oscillator = audioCtx.createOscillator();
     const gainNode = audioCtx.createGain();
 
