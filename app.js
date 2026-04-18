@@ -146,20 +146,45 @@ inputBox.addEventListener("input", function() {
     const isLight = document.body.classList.contains("light");
     let display = "";
 
-    for (let i = 0; i < textToType.length; i++) {
-        if (i < typedText.length) {
-            if (typedText[i] === textToType[i]) {
-                display += `<span style="color: green">${textToType[i] === " " ? "·" : textToType[i]}</span>`;
+    const words = textToType.split(" ");
+    let charIndex = 0;
+    let displayWords = [];
+
+    for (let w = 0; w < words.length; w++) {
+        let wordDisplay = "";
+        for (let c = 0; c < words[w].length; c++) {
+            const i = charIndex;
+            if (i < typedText.length) {
+                if (typedText[i] === textToType[i]) {
+                    wordDisplay += `<span style="color: green">${textToType[i]}</span>`;
+                } else {
+                    wordDisplay += `<span style="color: red">${textToType[i]}</span>`;
+                }
+            } else if (i === typedText.length) {
+                wordDisplay += `<span style="border-bottom: 2px solid ${isLight ? "black" : "white"}">${textToType[i]}</span>`;
             } else {
-                display += `<span style="color: red">${textToType[i] === " " ? "·" : textToType[i]}</span>`;
+                wordDisplay += textToType[i];
+            }
+            charIndex++;
         }
-        } else if (i === typedText.length) {
-            display += `<span style="border-bottom: 2px solid ${isLight ? "black" : "white"}">${textToType[i] === " " ? "&nbsp;" : textToType[i]}</span>`;
-        }else{
-            display += textToType[i] === " " ? "&nbsp;" : textToType[i];
+        displayWords.push(`<span style="white-space: nowrap">${wordDisplay}</span>`);
+
+        if (w < words.length - 1) {
+            const i = charIndex;
+            if (i < typedText.length) {
+                displayWords.push(typedText[i] === " "
+                    ? `<span style="color: green">·</span>`
+                    : `<span style="color: red">·</span>`);
+            } else if (i === typedText.length) {
+                displayWords.push(`<span style="border-bottom: 2px solid ${isLight ? "black" : "white"}"> </span>`);
+            } else {
+                displayWords.push(" ");
+            }
+            charIndex++;
         }
     }
 
+    display = displayWords.join("");
     textDisplay.innerHTML = display;
 
     if (typedText.length === textToType.length) {
