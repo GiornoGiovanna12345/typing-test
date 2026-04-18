@@ -196,6 +196,8 @@ body.light #high-score{
     color: #515050;
 }
 #text-display {
+    word-break: normal;
+    overflow-wrap: break-word;
     font-size: 1.4rem;
     width: 700px;
     max-width: 100%;

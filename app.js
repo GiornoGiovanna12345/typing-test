@@ -128,6 +128,7 @@ function endTest() {
 }
 
 inputBox.addEventListener("input", function() {
+    playTypeSound();
     if (!timerStarted) {
         timerStarted = true;
         testActive = true;
@@ -206,3 +207,20 @@ function loadHighScore(){
     }
 }
 loadHighScore();
+
+function playTypeSound() {
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const oscillator = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+
+    oscillator.type = "square";
+    oscillator.frequency.setValueAtTime(600, audioCtx.currentTime);
+    gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+
+    oscillator.start(audioCtx.currentTime);
+    oscillator.stop(audioCtx.currentTime + 0.05);
+}
